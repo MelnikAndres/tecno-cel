@@ -1,0 +1,384 @@
+*{
+    --verde:#52B09B;
+    --violeta:rgb(127,50,152);
+    --blanco:rgb(245,230,245);
+    --negro:rgb(10,50,50);
+    font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+body{
+    background-color: var(--blanco);
+    margin: 0;
+}
+.header{
+    background-color: var(--verde);
+    min-height: fit-content;
+    height: 360px
+}
+.header::after{
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 120px solid transparent;
+    border-top: 180px solid transparent;
+    border-right: 120px solid var(--violeta);
+    border-bottom: 180px solid var(--violeta);
+    z-index: 0;
+    filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
+    -webkit-filter: drop-shadow(-5px 0px 10px rgba(20,20,20,0.35));
+}
+.header::before{
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 120px solid transparent;
+    border-top: 180px solid transparent;
+    border-right: 120px solid #44978d;
+    border-bottom: 180px solid #44978d;
+    transform: rotateX(180deg);
+    z-index: 0;
+    filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
+    -webkit-filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
+}
+a{
+    text-decoration: none;
+}
+.navbar{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    gap:5%
+}
+.navbar a{
+    color: var(--blanco);
+    text-align: right;
+    font-size: 0.9rem;
+    z-index: 1;
+}
+.navbar a:hover{
+    text-decoration: underline;
+}
+.navbar .logo{
+    flex-grow: 1;
+    user-select: none;
+    height: 60px;
+}
+.logo-wrap{
+    height: 60px;
+    position: relative;
+}
+.logo img{
+    height: 80px;
+    position: absolute;
+}
+.contacto{
+    background-color: var(--violeta);
+    filter: brightness(120%);
+    padding: 8px 12px;
+    border-radius: 100px;
+    box-shadow: 0 0 4px 0 var(--violeta);
+    color: var(--blanco) !important;
+    transform: scale(1);
+    transition: transform 0.25s ease-in-out;
+}
+.contacto:hover{
+    transform: scale(1.08);
+}
+.header-content{
+    padding: 0 8%;
+    margin-top: 65px;
+    width: 84%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+.header-text h2{
+    color: var(--negro);
+    margin: 0;
+    font-size: 1.75rem;
+    letter-spacing: 0px;
+    line-height: 2rem;
+    text-justify: distribute;
+}
+.header-text h2:first-of-type{
+    font-family: 'Kanit','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.header-text h2:last-of-type{
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    color: var(--blanco);
+    
+}
+
+.header-text p{
+    margin-top: 0.2rem;
+    max-width: 90%;
+    color: var(--negro);
+    text-align: justify;
+}
+
+.header-graphic{
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.header-graphic img{
+    height: 320px;
+    transform: translate(0,-40px) rotate(15deg);
+    filter: drop-shadow(-5px 5px 10px rgba(20,20,20,0.45));
+    -webkit-filter: drop-shadow(-5px 5px 10px rgba(20,20,20,0.45));
+    user-select: none;
+}
+
+.main-content{
+    background-color: var(--blanco);
+    padding-bottom: 100px;
+}
+
+.filtros{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    place-items: center;
+    justify-content: end;
+    padding: 55px 5%;
+    z-index: 2;
+}
+.filtros button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    height: fit-content;
+}
+.filtros button:hover{
+    text-decoration: underline;
+}
+.active{
+    color: var(--violeta) !important;
+}
+.content-select i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 7px);
+	width: 8px;
+	height: 8px;
+	display: block;
+	border-left:2px solid var(--negro);
+	border-bottom:2px solid var(--negro);
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+.content-select{
+	position: relative;
+}
+.content-select .boton-otros:hover i{
+    border-left:2px solid var(--blanco);
+	border-bottom:2px solid var(--blanco);
+}
+ 
+.content-select .boton-otros{
+	display: inline-block;
+    width: calc(100% + 10px);
+    cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+    background-color: rgba(138,52,153,0.1);
+	color: var(--negro) !important;
+	font-size: 0.9em;
+	font-family: 
+	'Quicksand', sans-serif;
+    position: relative;
+    transition: all 0.25s ease;
+    border-radius: 4px;
+    z-index: 2;
+}
+ 
+.content-select button:hover, .content-select button:hover ~ .opciones button,
+.opciones button:hover {
+    background-color: rgba(138,52,153,0.7) !important;
+    color: var(--blanco) !important;
+    border-radius: 0;
+}
+.content-select button:hover ~ .opciones button{
+    color: var(--blanco) !important;
+}
+.content-select .opciones{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% + 10px);
+    background-color: var(--blanco);
+    position: absolute;
+}
+.hidden{
+    display: none !important;
+}
+.content-select .opciones button{
+    color: var(--negro);
+    padding:5px 2px;
+    background-color: rgba(138,52,153,0.1);
+    transition: all 0.25s ease;
+}
+.content-select .opciones button:hover{
+    text-decoration: underline;
+}
+.content-select .invisible-fill{
+    padding:0px 2px;
+    text-indent: 8px;
+    background-color: red;
+    color: transparent;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+.filtros p{
+    flex-grow: 1;
+    user-select: none;
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+
+.productos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.producto{
+    width: 220px;
+    padding: 10px 20px;
+    background-color: rgba(95,176,166,0.05);
+    border: 1px solid rgba(120,120,120,0.3);
+    border-radius: 5px;
+    box-shadow: 0 0 50px rgba(120,120,120,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+}
+.producto .img-container img{
+    height: 200px;
+}
+.producto .img-container{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    border-bottom: 1px solid rgba(120,120,120,0.3);
+}
+.producto .nombre{
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+.producto p{
+    margin:0;
+    font-size: 0.9rem;
+    color: var(--negro);
+}
+.producto .precio{
+    display: flex;
+    gap: 20px;
+}
+.precio p{
+    color:#00a650;
+}
+.producto .boton-consultar{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.producto a{
+    flex-grow: 1;
+    background-color:var(--violeta);
+    padding: 6px 10px;
+    color: var(--blanco);
+    position: relative;
+    text-align: center;
+    margin-top: 2px;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+    border-radius: 2px;
+}
+.producto a:hover, .producto a:hover ~ .wsp-logo-container{
+    text-decoration: underline;
+}
+.wsp-logo-container{
+    background-color: var(--violeta);
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+    transition: transform 0.2s ease-in-out;
+}
+.wsp-logo{
+    position: absolute;
+    right: 8px;
+    height: 21px;
+    filter:brightness(8);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+@media (max-width: 675px) {
+    *{
+        font-size: 14px;
+    }
+    .header{
+        height: 600px;
+    }
+    .header-content{
+        padding: 0 2%;
+        width: 96%;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(1, 100%);
+    }
+    .header-text{
+        max-width: 480px;
+        width: 95%;
+        z-index: 100;
+    }
+
+    .header-text p{
+        max-width: 100%;
+    }
+    .header-text h2{
+        width: 100%;
+    }
+    .header-graphic{
+        width: 100%;
+    }
+    .header-graphic img{
+        height: 310px;
+        margin-top: 10px;
+        transform: rotate(15deg);    
+    }
+    .header::after{
+        top: 240px;
+    }
+    .productos-text{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .content-select{
+        margin-top: 1rem;
+    }
+    .filtros{
+        justify-content: center;
+    }
+}

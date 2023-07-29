@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="navbar">
+                    <div class="logo">
+                        <div class="logo-wrap">
+                            <img src="./logo.png" alt="">
+                        </div>
+                    </div>
+                    <a href="./info.html">Info</a>
+                    <a href="./nosotros.html">Nosotros</a>
+                    <a href="https://linktr.ee/tecnocel.baires" class="contacto">Contactanos</a>
+                </div>
+                <div class="header-content">
+                    <div class="header-text">
+                        <h2>Todos los productos Apple que buscas</h2>
+                        <h2>a un precio inigualable</h2>
+                        <p>Te asesoramos para que logres encontrar lo que mas se ajusta a tus necesidades y
+                            te ofrecemos una garantia gratuita para que siempre estes seguro.</p>
+                    </div>
+                    <div class="header-graphic">
+                        <img src="./celular.png" alt="iphone">
+                    </div> 
+                </div>
+                
+            </div>
+        </header>
+        <main>
+            <div class="main-content">
+                <div class="filtros">
+                    <p class="productos-text">PRODUCTOS</p>
+                    <button onclick="clickOpcion(OPCIONES[0])" id="Nuevos">Nuevos</button>
+                    <button onclick="clickOpcion(OPCIONES[1])" id="Semi-Nuevos">Semi-Nuevos</button>
+                    <div class="content-select">
+                        <button class="boton-otros" id="boton-otros">Otros<i></i></button>
+                        <div class="opciones hidden" id="opciones-otros">
+                            <button onclick="clickOpcion(OPCIONES[2])" id="Reacondicionados">Reacondicionados</button>
+                            <button onclick="clickOpcion(OPCIONES[3])" id="Accesorios">Accesorios</button>
+                            <button onclick="clickOpcion(OPCIONES[4])" id="Usados">Usados</button>
+                            <button onclick="clickOpcion(OPCIONES[5])" id="Xiaomi">Xiaomi</button>
+                        </div>
+                        <p class="invisible-fill">Reacondicionados</p>
+                    </div>
+                </div>
+                <div class="productos">
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producto">
+                        <div class="img-container">
+                            <img src="./celular.png" alt="">
+                        </div>
+                        <p class="nombre">Iphone 11</p>
+                        <p>Capacidad: 64GB</p>
+                        <div class="precio">
+                            <p>USD:$520</p>
+                            <p>ARS:-</p>
+                        </div>
+                        <div class="boton-consultar">
+                            <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+                            <div class="wsp-logo-container">
+                                <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>
