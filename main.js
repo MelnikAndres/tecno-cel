@@ -71,6 +71,9 @@ fetch("https://melnikandres.github.io/tecno-cel/celulares.json").then(res => res
     }
     for(item of celulares){
         productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
+        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
+        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
+
     }
     })
 })

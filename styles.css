@@ -12,7 +12,6 @@ body{
 }
 .header{
     background-color: var(--verde);
-    min-height: fit-content;
     height: 360px
 }
 .header::after{
@@ -28,7 +27,7 @@ body{
     border-bottom: 180px solid var(--violeta);
     z-index: 0;
     filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
-    -webkit-filter: drop-shadow(-5px 0px 10px rgba(20,20,20,0.35));
+    -webkit-filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
 }
 .header::before{
     content: "";
