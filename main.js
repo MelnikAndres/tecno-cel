@@ -17,7 +17,7 @@ document.addEventListener("click", (ev)=>{
     }
 })
 
-OPCIONES = ["Nuevos","Semi-Nuevos","Reacondicionados","Accesorios","Usados","Xiaomi"]
+const OPCIONES = ["Nuevos","Semi-Nuevos","Reacondicionados","Accesorios","Usados","Xiaomi"]
 
 const clickOpcion = (opcion) =>{
     const searchParams = new URLSearchParams(window.location.search);
@@ -28,5 +28,9 @@ var searchParams = new URLSearchParams(window.location.search);
 const setActivo = (opcion) =>{
     const activo = opcion?document.getElementById(opcion):document.getElementById("Nuevos")
     activo.classList.add("active")
+    if(OPCIONES.indexOf(opcion)>1){
+        const botonSelect = document.getElementById("boton-otros")
+        botonSelect.childNodes[0].data = opcion
+    }
 }
 setActivo(searchParams.get("tipo"))

@@ -189,7 +189,6 @@ a{
 	display: inline-block;
     width: calc(100% + 10px);
     cursor: pointer;
-  	padding: 7px 10px;
   	height: 42px;
   	outline: 0; 
   	border: 0;
@@ -234,7 +233,7 @@ a{
     text-decoration: underline;
 }
 .content-select .invisible-fill{
-    padding:0px 2px;
+    padding:0px 4px;
     text-indent: 8px;
     background-color: red;
     color: transparent;
