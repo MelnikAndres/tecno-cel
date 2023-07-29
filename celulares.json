@@ -4,5 +4,8 @@
     ],
     "Semi-Nuevos":[
         {"nombre":"Iphone 8", "capacidad":"64","dolares":190,"imagen":"celular2.png", "agotado":false}
+    ],
+    "Usados":[
+        {"nombre":"Iphone 11 PRO", "capacidad":"256","dolares":530,"imagen":"celular2.png", "agotado":false}
     ]
 }

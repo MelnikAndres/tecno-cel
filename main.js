@@ -47,7 +47,7 @@ const convertirAitem = (celular,precioDolar) =>{
         <img src="${celular.imagen}" alt="">
     </div>
     <p class="nombre">${celular.nombre}</p>
-    <p>Capacidad: ${celular.capacidad}</p>
+    <p>Capacidad: ${celular.capacidad}GB</p>
     <div class="precio">
         <p>USD:$${celular.dolares}</p>
         <p>ARS:$${pesos}</p>
@@ -63,12 +63,15 @@ const precioDolar = fetch("https://api.bluelytics.com.ar/v2/latest").then(res =>
 fetch("https://melnikandres.github.io/tecno-cel/celulares.json").then(res => res.json()).then(data => {
     precioDolar.then(precio => {
     productos.innerHTML = ""
+    console.log(data)
     const celulares = data[searchParams.get("tipo")?searchParams.get("tipo"):"Nuevos"]
     if(!celulares){
         productos.innerHTML = "<p>No hay celulares disponibles en esta categoria</p>"
+        return
     }
     for(item of celulares){
         productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
     }
     })
 })
+  
