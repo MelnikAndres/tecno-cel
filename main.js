@@ -1,3 +1,4 @@
+
 const botonOtros = document.getElementById("boton-otros")
 const opcionesOtros = document.getElementById("opciones-otros")
 
@@ -39,7 +40,8 @@ const productos = document.getElementById("productos")
 
 const preciazo = 520
 
-const convertirAitem = (celular) =>{
+const convertirAitem = (celular,precioDolar) =>{
+    const pesos = (celular.dolares*precioDolar).toLocaleString()
     return `<div class="producto">
     <div class="img-container">
         <img src="${celular.imagen}" alt="">
@@ -48,7 +50,7 @@ const convertirAitem = (celular) =>{
     <p>Capacidad: ${celular.capacidad}</p>
     <div class="precio">
         <p>USD:$${celular.dolares}</p>
-        <p>ARS:-</p>
+        <p>ARS:$${pesos}</p>
     </div>
     <div class="boton-consultar">
         <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
@@ -57,8 +59,16 @@ const convertirAitem = (celular) =>{
         </div>
     </div>`
 }
-const data = fetch("./celulares.json").then(res => res.json()).then(data => data)
-console.log(data)
-for(item of data[searchParams.get("tipo")]){
-    productos.innerHTML += convertirAitem(item)
-}
+const precioDolar = fetch("https://api.bluelytics.com.ar/v2/latest").then(res => res.json())
+fetch("https://melnikandres.github.io/tecno-cel/celulares.json").then(res => res.json()).then(data => {
+    precioDolar.then(precio => {
+    productos.innerHTML = ""
+    const celulares = data[searchParams.get("tipo")]
+    if(!celulares){
+        productos.innerHTML = "<p>No hay celulares disponibles en esta categoria</p>"
+    }
+    for(item of celulares){
+        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
+    }
+    })
+})
