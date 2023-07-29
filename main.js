@@ -34,3 +34,31 @@ const setActivo = (opcion) =>{
     }
 }
 setActivo(searchParams.get("tipo"))
+
+const productos = document.getElementById("productos")
+
+const preciazo = 520
+
+const convertirAitem = (celular) =>{
+    return `<div class="producto">
+    <div class="img-container">
+        <img src="${celular.imagen}" alt="">
+    </div>
+    <p class="nombre">${celular.nombre}</p>
+    <p>Capacidad: ${celular.capacidad}</p>
+    <div class="precio">
+        <p>USD:$${celular.dolares}</p>
+        <p>ARS:-</p>
+    </div>
+    <div class="boton-consultar">
+        <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+        <div class="wsp-logo-container">
+            <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
+        </div>
+    </div>`
+}
+const data = fetch("./celulares.json").then(res => res.json()).then(data => data)
+console.log(data)
+for(item of data[searchParams.get("tipo")]){
+    productos.innerHTML += convertirAitem(item)
+}

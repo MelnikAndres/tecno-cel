@@ -1,0 +1,8 @@
+{
+    "Nuevos":[
+        {"nombre":"Iphone 11", "capacidad":"64","dolares":"520","imagen":"celular.png", "agotado":false}
+    ],
+    "Semi-Nuevos":[
+        {"nombre":"Iphone 8", "capacidad":"64","dolares":"190","imagen":"celular2.png", "agotado":false}
+    ]
+}
