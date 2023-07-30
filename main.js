@@ -38,8 +38,6 @@ setActivo(searchParams.get("tipo"))
 
 const productos = document.getElementById("productos")
 
-const preciazo = 520
-
 const convertirAitem = (celular,precioDolar) =>{
     const pesos = (celular.dolares*precioDolar).toLocaleString()
     return `<div class="producto">
@@ -50,7 +48,7 @@ const convertirAitem = (celular,precioDolar) =>{
     <p>Capacidad: ${celular.capacidad}GB</p>
     <div class="precio">
         <p>USD:$${celular.dolares}</p>
-        <p>ARS:$${pesos}</p>
+        <p>ARS:$${pesos}<i>?</i></p>
     </div>
     <div class="boton-consultar">
         <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
