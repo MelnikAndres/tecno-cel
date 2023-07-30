@@ -2,7 +2,7 @@
     --verde:#52B09B;
     --violeta:rgb(127,50,152);
     --blanco:rgb(245,230,245);
-    --negro:rgb(10,50,50);
+    --negro:rgb(10,35,35);
     font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     letter-spacing: 1px;
 }
@@ -157,6 +157,7 @@ a{
     cursor: pointer;
     font-size: 0.9rem;
     height: fit-content;
+    color: var(--negro);
 }
 .filtros button:hover{
     text-decoration: underline;
@@ -245,6 +246,7 @@ a{
     user-select: none;
     font-size: 1.25rem;
     font-weight: bolder;
+    color: var(--negro);
 }
 
 .productos{
@@ -265,7 +267,6 @@ a{
     display: flex;
     flex-direction: column;
     gap: 3px;
-
 }
 .producto .img-container img{
     height: 200px;
