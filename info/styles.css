@@ -7,17 +7,19 @@
     letter-spacing: 1px;
 }
 body{
-    background-color: var(--blanco);
+    background-color: rgb(167,90,192);
     margin: 0;
+    position: relative;
 }
 .header{
-    background-color: var(--violeta);
-    height: 320px
+    background-color: var(--blanco);
+    height: 250px;
 }
 .navbar a{
     width: fit-content;
     position: relative;
     display: block;
+    filter: brightness(0);
 }
 .navbar a img{
     display: block;
@@ -32,18 +34,15 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 50%);
     align-items: center;
-    height: 204px;
+    height: 144px;
 }
 .header-text h2{
     color: var(--negro);
     margin: 0;
-    font-size: 1.75rem;
     letter-spacing: 0px;
     width: 100%;
     text-align: center;
-}
-.header-text h2{
-    color: var(--negro);
+    text-shadow: -30px -30px rgba(120, 120, 120, 0.3);
     font-size: 3rem;
     font-family: 'Kanit','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -57,13 +56,33 @@ body{
     position: absolute;
     text-align: center;
     left: 50%;
-    transform: translate(-50%,-90%);
+    transform: translate(-50%,-105%);
+    opacity: 0.5;
     font-size: 14rem;
-    color: var(--blanco);
+    color: var(--violeta);
+    text-shadow: -25px -25px rgba(180, 120, 180, 0.3);
 }
 .header-text p{
     margin-top: 0.2rem;
     max-width: 90%;
     color: var(--blanco);
     text-align: justify;
+}
+
+.main-content{
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(2,50%);
+    width: 80%;
+    gap: 20px;
+    padding: 0 10%;
+}
+.main-content p{
+    color: var(--blanco);
+    margin-top: 0;
+}
+.main-content h2{
+    font-size: 1.75rem;
+    color: var(--negro);
+    margin-bottom: 0.5rem;
 }
