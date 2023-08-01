@@ -162,7 +162,7 @@ body{
         height: 480px;
     }
     .header-graphic h3{
-        transform: translate(-50%,-90%);
+        transform: translate(-52%,-90%);
     }
     .header-content::before{
         bottom: -278px;
