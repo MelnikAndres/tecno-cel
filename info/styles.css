@@ -159,12 +159,15 @@ body{
         grid-template-columns: repeat(1,100%);
     }
     .header{
-        height: 450px;
+        height: 480px;
     }
     .header-graphic h3{
         transform: translate(-50%,-90%);
     }
     .header-content::before{
-        bottom: -248px;
+        bottom: -278px;
+    }
+    .header-text{
+        margin-top: 20px;
     }
 }
