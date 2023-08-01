@@ -170,4 +170,7 @@ body{
     .header-text{
         margin-top: 20px;
     }
+    .header-text h2::after{
+        display: none;
+    }
 }
