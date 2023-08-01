@@ -19,7 +19,7 @@ body{
     width: fit-content;
     position: relative;
     display: block;
-    z-index: 100;
+    z-index: 200;
     filter: brightness(0);
 }
 .navbar a img{
@@ -27,7 +27,8 @@ body{
     height: 50px;
     width: 50px;
     padding-left: 10px; 
-    padding-top: 8px;   
+    padding-top: 8px;
+    z-index: 100;
 }
 .header-content{
     padding: 0 8%;
