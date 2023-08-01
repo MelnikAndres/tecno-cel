@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Subit</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+    <div class="body-wrap">
+        <div class="celulares">
+            <div class="celular">
+                <span>Nombre: <input type="text" placeholder="Iphone 11"></span>
+                <span>Capacidad: <input type="text" placeholder="64"> GB</span>
+                <span>Dolares: $<input type="number" placeholder="520"></span>
+                <span>Imagen: <input type="text" placeholder="celular.png"></span>
+                <span>Agotado: <input type="checkbox"> (check = agotado)</span>
+            </div>
+            <div class="celular">
+                <span>Nombre: <input type="text" placeholder="Iphone 11"></span>
+                <span>Capacidad: <input type="text" placeholder="64"> GB</span>
+                <span>Dolares: $<input type="number" placeholder="520"></span>
+                <span>Imagen: <input type="text" placeholder="celular.png"></span>
+                <span>Agotado: <input type="checkbox"> (check = agotado)</span>
+            </div>
+        </div>
+        <p>Archivo</p>
+        <input type="file" id="fileInput">
+        <p>Contraseña</p>
+        <input type="text" id="tokenInput">
+        <button onclick="uploadFile()">Subir</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
