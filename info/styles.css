@@ -2,22 +2,34 @@
     --verde:#52B09B;
     --violeta:rgb(127,50,152);
     --blanco:#f5e6f5;
-    --negro:rgb(15,5,15);
+    --negro:rgb(65, 25, 85);
     font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     letter-spacing: 1px;
 }
 body{
-    background-color: rgb(167,90,192);
+    background-color: var(--verde);
     margin: 0;
     position: relative;
 }
 .header{
-    background-color: var(--blanco);
-    height: 250px;
+    background: linear-gradient(90deg, var(--blanco),rgb(245, 233, 245), var(--blanco));
+    background-size: cover;
+    height: 260px;
+    position: relative;
+}
+.header::after{
+    content:"";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+    box-shadow: 0 0 20px 0 rgba(20,20,20,0.3);
 }
 .navbar a{
     width: fit-content;
-    position: relative;
+    position: absolute;
     display: block;
     z-index: 200;
     filter: brightness(0);
@@ -31,96 +43,41 @@ body{
     z-index: 100;
 }
 .header-content{
-    padding: 0 8%;
-    width: 84%;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
     align-items: center;
-    height: 144px;
+    justify-content: space-evenly;
     position: relative;
 }
-.header-content::after{
-    content: "";
-    display: block;
-    height: 0;
-    width: 0;
-    border-top: 60px solid var(--violeta);
-    border-bottom: 120px solid transparent;
-    border-left: 60px solid transparent;
-    border-right: 120px solid var(--violeta);
-    position: absolute;
-    filter: drop-shadow(-5px -5px 15px rgba(70,70,70,0.7));
-    right: 0;
-    top: -58px;
-    z-index: 10;
-}
-.header-content::before{
-    content: "";
-    display: block;
-    height: 0;
-    width: 0;
-    border-bottom: 60px solid var(--violeta);
-    border-top: 120px solid transparent;
-    border-left: 60px solid transparent;
-    border-right: 120px solid var(--violeta);
-    position: absolute;
-    right: 0;
-    bottom:-48px;   
-    z-index: 10;
-    filter: drop-shadow(-5px -5px 15px rgba(90,90,90,0.7)) brightness(0.8);
-}
-.header-text h2{
+
+.header-content h2{
     color: var(--negro);
     margin: 0;
+    padding: 0 50px;
     letter-spacing: 0px;
-    width: 100%;
     text-align: center;
     font-size: 3rem;
     font-family: 'Kanit','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     z-index: 100;
     position: relative;
+    text-shadow: -40px -25px rgba(180, 120, 180, 0.3);
 }
-.header-text h2::after{
-    content: "Preguntas Frecuentes";
-    color: rgba(120, 120, 120, 0.3);
-    margin: 0;
-    letter-spacing: 0px;
-    width: 100%;
+.header-content h3{
+    padding-right: 50px;
     text-align: center;
-    font-size: 3rem;
-    font-family: 'Kanit','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    position: absolute;
-    left: -30px;
-    top: -30px;
-    z-index: -1;
-}
-.header-graphic{
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-.header-graphic h3{
-    position: absolute;
-    text-align: center;
-    left: 50%;
-    transform: translate(-50%,-105%);
-    opacity: 0.5;
     font-size: 14rem;
-    color: var(--violeta);
+    color: var(--negro);
     text-shadow: -25px -25px rgba(180, 120, 180, 0.3);
-}
-.header-text p{
-    margin-top: 0.2rem;
-    max-width: 90%;
-    color: var(--blanco);
-    text-align: justify;
+    margin: 0;
+    z-index: 10;
 }
 
 .main-content{
     display: grid;
     flex-grow: 1;
     grid-template-columns: repeat(2,50%);
+    place-content: center;
     width: 80%;
     gap: 45px;
     padding: 0 10%;
@@ -145,9 +102,13 @@ body{
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
-    border-bottom: 1px solid var(--blanco);
+    border-bottom: 1px solid var(--negro);
     padding: 10px 10px;
-    background-color: rgb(167,90,192);
+}
+.pregunta h2{
+    font-weight: bolder;
+    font-style: italic;
+    color: var(--negro);
 }
 .precio-dolar{
     color: #00a650;
@@ -155,22 +116,36 @@ body{
 }
 
 @media (max-width:675px){
-    .main-content,.header-content{
+    .main-content{
         grid-template-columns: repeat(1,100%);
     }
     .header{
         height: 480px;
     }
-    .header-graphic h3{
-        transform: translate(-52%,-90%);
-    }
-    .header-content::before{
-        bottom: -278px;
-    }
     .header-text{
         margin-top: 20px;
     }
-    .header-text h2::after{
-        display: none;
+    .header-content h2, .header-content h3{
+        padding: 0;
+        width: 100%;
     }
+    .header-content h2{
+        padding: 0 20px;
+        text-shadow: none;
+    }
+    .header-content h3{
+        margin-bottom: 25px;
+    }
+    .header-text{
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+    .header-content{
+        padding-top: 25px;
+        justify-content:start;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
 }

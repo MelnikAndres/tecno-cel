@@ -2,7 +2,7 @@
     --verde:#52B09B;
     --violeta:rgb(127,50,152);
     --blanco:rgb(245,230,245);
-    --negro:rgb(10,35,35);
+    --negro:rgb(65, 25, 85);
     font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     letter-spacing: 1px;
 }
@@ -12,7 +12,7 @@ body{
 }
 .header{
     background-color: var(--verde);
-    height: 360px
+    height: 360px;
 }
 .header::after{
     content: "";
@@ -26,8 +26,8 @@ body{
     border-right: 120px solid var(--violeta);
     border-bottom: 180px solid var(--violeta);
     z-index: 0;
-    filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
-    -webkit-filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
+    filter: drop-shadow(-5px 0 5px rgba(20,20,20,0.35));
+    -webkit-filter: drop-shadow(-5px 0 5px rgba(20,20,20,0.35));
 }
 .header::before{
     content: "";
@@ -162,8 +162,16 @@ a{
 .filtros button:hover{
     text-decoration: underline;
 }
+.filtros p{
+    flex-grow: 1;
+    user-select: none;
+    font-size: 1.25rem;
+    font-weight: bolder;
+    color: var(--negro);
+}
 .active{
     color: var(--violeta) !important;
+    filter: brightness(1.5);
 }
 .content-select i{
 	position: absolute;
@@ -240,13 +248,6 @@ a{
     height: 0;
     overflow: hidden;
     margin: 0;
-}
-.filtros p{
-    flex-grow: 1;
-    user-select: none;
-    font-size: 1.25rem;
-    font-weight: bolder;
-    color: var(--negro);
 }
 
 .productos{
