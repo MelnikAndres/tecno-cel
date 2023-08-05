@@ -32,7 +32,6 @@ body{
     position: absolute;
     display: block;
     z-index: 200;
-    filter: brightness(0);
 }
 .navbar a img{
     display: block;
