@@ -184,6 +184,7 @@ a{
 	border-bottom:2px solid var(--negro);
 	transform: rotate(-45deg); /* Giramos el cuadrado */
 	transition: all 0.25s ease;
+    pointer-events: none;
 }
 .content-select{
 	position: relative;
@@ -195,7 +196,7 @@ a{
  
 .content-select .boton-otros{
 	display: inline-block;
-    width: calc(100% + 10px);
+    width: 100%;
     cursor: pointer;
   	height: 42px;
   	outline: 0; 
@@ -224,7 +225,7 @@ a{
 .content-select .opciones{
     display: flex;
     flex-direction: column;
-    width: calc(100% + 10px);
+    width: 100%;
     background-color: var(--blanco);
     position: absolute;
 }
@@ -241,9 +242,8 @@ a{
     text-decoration: underline;
 }
 .content-select .invisible-fill{
-    padding:0px 4px;
+    padding-right: 18px;
     text-indent: 8px;
-    background-color: red;
     color: transparent;
     height: 0;
     overflow: hidden;
