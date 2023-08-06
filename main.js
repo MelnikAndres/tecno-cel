@@ -38,7 +38,14 @@ setActivo(searchParams.get("tipo"))
 
 const productos = document.getElementById("productos")
 
-const convertirAitem = (celular,precioDolar) =>{
+const convertirAitem = (celular,precioDolar,tipo) =>{
+    let message;
+    if(tipo !== "Xiaomi"){
+        tipo = tipo.substring(0,tipo.length-1).toLowerCase()
+        message = `${celular.nombre} ${tipo} ${celular.capacidad} GB`
+    }else{
+        message = `${celular.nombre} ${celular.capacidad} GB`
+    }
     const pesos = (celular.dolares*precioDolar).toLocaleString()
     return `<div class="producto">
     <div class="img-container">
@@ -51,7 +58,7 @@ const convertirAitem = (celular,precioDolar) =>{
         <p>ARS:$${pesos}<i>?</i></p>
     </div>
     <div class="boton-consultar">
-        <a href="https://api.whatsapp.com/message/B7JFBEEVOOS7G1?autoload=1&app_absent=0" target="_blank">Consultar</a>
+        <a href="https://wa.me/+5491164348539?text=%C2%A1Hola%21+Quer%C3%ADa+consultar+sobre+${encodeURIComponent(message)}" target="_blank">Consultar</a>
         <div class="wsp-logo-container">
             <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
         </div>
@@ -61,16 +68,17 @@ const precioDolar = fetch("https://api.bluelytics.com.ar/v2/latest").then(res =>
 fetch("https://melnikandres.github.io/tecno-cel/celulares.json").then(res => res.json()).then(data => {
     precioDolar.then(precio => {
     productos.innerHTML = ""
+    const tipo = searchParams.get("tipo")?searchParams.get("tipo"):"Nuevos"
     console.log(data)
-    const celulares = data[searchParams.get("tipo")?searchParams.get("tipo"):"Nuevos"]
+    const celulares = data[tipo]
     if(!celulares){
         productos.innerHTML = "<p>No hay celulares disponibles en esta categoria</p>"
         return
     }
     for(item of celulares){
-        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
-        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
-        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5)
+        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
+        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
+        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
 
     }
     })
