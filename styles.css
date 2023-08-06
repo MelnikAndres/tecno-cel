@@ -170,8 +170,7 @@ a{
     color: var(--negro);
 }
 .active{
-    color: var(--violeta) !important;
-    filter: brightness(1.5);
+    color: rgb(187, 76, 223) !important;
 }
 .content-select i{
 	position: absolute;
