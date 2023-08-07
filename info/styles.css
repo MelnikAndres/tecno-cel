@@ -231,7 +231,39 @@ body{
         top: 5%;
     }
 }
-@media (max-width:503px){
+@media (max-width:503px) and (min-width:350px){
+    .header::after{
+        content:"";
+        position: absolute;
+        height: 9%;
+        width: 2px;
+        background-color: var(--negro);
+        left: calc(50% - 95px);
+        top: 5%;
+    }
+    .arrow{
+        left: calc(50% + 95px);
+        height: 53%;
+    }
+    .arrow:last-of-type{
+        position: absolute;
+        height: 53%;
+        width: 2px;
+        background-color: var(--negro);
+        left: calc(50% - 95px);
+        bottom: 5%;
+    }
+    .header::before{
+        content:"";
+        position: absolute;
+        height: 9%;
+        width: 2px;
+        background-color: var(--negro);
+        left: calc(50% + 95px);
+        top: 5%;
+    }
+}
+@media(max-width:350px){
     .header::after{
         content:"";
         position: absolute;
