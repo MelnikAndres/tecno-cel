@@ -235,7 +235,7 @@ body{
     .header::after{
         content:"";
         position: absolute;
-        height: 8%;
+        height: 9%;
         width: 2px;
         background-color: var(--negro);
         left: calc(50% - 85px);
@@ -256,7 +256,7 @@ body{
     .header::before{
         content:"";
         position: absolute;
-        height: 8%;
+        height: 9%;
         width: 2px;
         background-color: var(--negro);
         left: calc(50% + 85px);
