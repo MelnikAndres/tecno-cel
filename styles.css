@@ -250,9 +250,9 @@ a{
 }
 
 .productos{
-    display: flex;
+    display: grid;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit,260px);
     gap: 15px;
     padding: 0 10px;
 }
@@ -387,6 +387,53 @@ a{
     opacity: 0.8;
     pointer-events: none;
 }
+
+.filler{
+    width: 100%;
+    background: linear-gradient(90deg, transparent 30%, white, transparent 70%);
+    width: 100%;
+    height: 100%;
+    animation: 1s cubic-bezier(.81,0,.31,1) 0s infinite alternate load;
+}
+.filler-nombre{
+    overflow: hidden;
+    width: 100%;
+    height: 1.3rem;
+}
+.filler-capacidad{
+    overflow: hidden;
+    width: 60%;
+    height: 1rem;
+    margin: 1px 0;
+}
+.filler-precio{
+    overflow: hidden;
+    width: 85%;
+    height: 1rem;
+    margin: 1px 0;
+}
+.filler-consultar{
+    overflow: hidden;
+    width:92%;
+    margin: 1px 4%;
+    height: 1.75rem;
+}
+.filler-img{
+    margin-bottom: 6px;
+    overflow: hidden;
+    width: 100%;
+    height: 220px;
+}
+
+@keyframes load{
+    from{
+        transform: translate(-50%,0);
+    }
+    to{
+        transform: translate(50%,0);
+    }
+}
+
 
 @media (max-width: 675px) {
     *{

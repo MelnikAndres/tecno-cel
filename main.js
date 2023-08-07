@@ -69,23 +69,28 @@ const convertirAitem = (celular,precioDolar,tipo) =>{
         </div>
     </div>`
 }
+
 const precioDolar = fetch("https://api.bluelytics.com.ar/v2/latest").then(res => res.json())
 fetch("https://melnikandres.github.io/tecno-cel/celulares.json").then(res => res.json()).then(data => {
     precioDolar.then(precio => {
-    productos.innerHTML = ""
-    const tipo = searchParams.get("tipo")?searchParams.get("tipo"):"Nuevos"
-    console.log(data)
-    const celulares = data[tipo]
-    if(!celulares){
-        productos.innerHTML = "<p>No hay celulares disponibles en esta categoria</p>"
-        return
-    }
-    for(item of celulares){
-        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
-        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
-        productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
-
-    }
+        setTimeout(() => {
+            productos.innerHTML = ""
+            productos.classList.remove("cargando")
+            const tipo = searchParams.get("tipo")?searchParams.get("tipo"):"Nuevos"
+            console.log(data)
+            const celulares = data[tipo]
+            if(!celulares){
+                productos.innerHTML = `<p style="text-align:center;">No hay celulares disponibles en esta categoria</p>`
+                return
+            }
+            for(item of celulares){
+                productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
+                productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
+                productos.innerHTML += convertirAitem(item, precio.blue.value_sell+5,tipo)
+        
+            }
+        }, 1000);
     })
 })
+
   
