@@ -142,6 +142,15 @@ body{
     color: #00a650;
     background-color: var(--blanco);
 }
+.contacto{
+    color:var(--blanco);
+    background-color: var(--violeta);
+    padding: 3px 8px;
+    border-radius: 8px;
+}
+.contacto:hover{
+    filter: brightness(1.25);
+}
 
 @media (max-width:675px){
     .main-content{

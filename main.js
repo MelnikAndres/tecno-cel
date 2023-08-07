@@ -38,6 +38,11 @@ setActivo(searchParams.get("tipo"))
 
 const productos = document.getElementById("productos")
 
+const getBotonConsultar = (agotado, message) =>{
+    return agotado?`<p class="consultar-text">Agotado</p>`
+    :`<a class="consultar-text" href="https://wa.me/+5491164348539?text=%C2%A1Hola%21+Quer%C3%ADa+consultar+sobre+${encodeURIComponent(message)}" target="_blank">Consultar</a>`
+}
+
 const convertirAitem = (celular,precioDolar,tipo) =>{
     let message;
     if(tipo !== "Xiaomi"){
@@ -47,7 +52,7 @@ const convertirAitem = (celular,precioDolar,tipo) =>{
         message = `${celular.nombre} ${celular.capacidad} GB`
     }
     const pesos = (celular.dolares*precioDolar).toLocaleString()
-    return `<div class="producto">
+    return `<div class="producto ${celular.agotado?"agotado":""}">
     <div class="img-container">
         <img src="${celular.imagen}" alt="">
     </div>
@@ -58,7 +63,7 @@ const convertirAitem = (celular,precioDolar,tipo) =>{
         <p>ARS:$${pesos}<i>?</i></p>
     </div>
     <div class="boton-consultar">
-        <a href="https://wa.me/+5491164348539?text=%C2%A1Hola%21+Quer%C3%ADa+consultar+sobre+${encodeURIComponent(message)}" target="_blank">Consultar</a>
+        ${getBotonConsultar(celular.agotado, message)}
         <div class="wsp-logo-container">
             <img class="wsp-logo" src="./wsp-logo-2.png" alt="">
         </div>

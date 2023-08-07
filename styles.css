@@ -337,7 +337,7 @@ a{
     justify-content: center;
     position: relative;
 }
-.producto a{
+.producto .consultar-text{
     flex-grow: 1;
     background-color:var(--violeta);
     padding: 6px 10px;
@@ -346,11 +346,31 @@ a{
     text-align: center;
     margin-top: 2px;
     transform: scale(1);
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     border-radius: 2px;
 }
-.producto a:hover, .producto a:hover ~ .wsp-logo-container{
-    text-decoration: underline;
+.agotado .consultar-text{
+    flex-grow: 1;
+    background-color: rgb(208, 59, 123);
+    padding: 6px 10px;
+    color: var(--blanco);
+    position: relative;
+    text-align: center;
+    margin-top: 2px;
+    border-radius: 2px;
+    font-size: 1rem;
+    user-select: none;
+    cursor: not-allowed;
+}
+.agotado .wsp-logo-container{
+    display: none;
+}
+.agotado{
+    background-color: rgb(253, 227, 238);
+}
+.producto .consultar-text:hover, .producto .consultar-text:hover ~ .wsp-logo-container{
+    filter: brightness(1.25);
+    opacity: 0.85;
 }
 .wsp-logo-container{
     background-color: var(--violeta);
