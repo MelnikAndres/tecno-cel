@@ -488,3 +488,13 @@ a{
         line-height: 1.1rem;
     }
 }
+@media (prefers-color-scheme:dark){
+    *{
+        --verde:#52B09B;
+        --violeta:rgb(127,50,152);
+        --blanco:rgb(245,230,245);
+        --negro:rgb(65, 25, 85);
+        font-family: 'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        letter-spacing: 1px;
+    }
+}
