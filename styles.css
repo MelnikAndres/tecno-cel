@@ -21,8 +21,8 @@ body{
     position: absolute;
     right: 0;
     top: 0;
-    border-left: 120px solid transparent;
-    border-top: 180px solid transparent;
+    border-left: 120px solid rgba(0,0,0,0);
+    border-top: 180px solid rgba(0,0,0,0);
     border-right: 120px solid var(--violeta);
     border-bottom: 180px solid var(--violeta);
     z-index: 0;
@@ -36,8 +36,8 @@ body{
     position: absolute;
     right: 0;
     top: 0;
-    border-left: 120px solid transparent;
-    border-top: 180px solid transparent;
+    border-left: 120px solid rgba(0,0,0,0);
+    border-top: 180px solid rgba(0,0,0,0);
     border-right: 120px solid #44978d;
     border-bottom: 180px solid #44978d;
     transform: rotateX(180deg);
@@ -152,7 +152,7 @@ a{
     z-index: 2;
 }
 .filtros button{
-    background-color: transparent;
+    background-color: rgba(0,0,0,0);
     border: none;
     cursor: pointer;
     font-size: 0.9rem;
@@ -243,7 +243,7 @@ a{
 .content-select .invisible-fill{
     padding-right: 18px;
     text-indent: 8px;
-    color: transparent;
+    color: rgba(0,0,0,0);
     height: 0;
     overflow: hidden;
     margin: 0;
@@ -390,7 +390,7 @@ a{
 
 .filler{
     width: 100%;
-    background: linear-gradient(90deg, transparent 30%, white, transparent 70%);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 30%, white, rgba(0,0,0,0) 70%);
     width: 100%;
     height: 100%;
     animation: 1s cubic-bezier(.81,0,.31,1) 0s infinite alternate load;
