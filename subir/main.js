@@ -3,11 +3,20 @@ const repo = 'tecno-cel';
 const filePath = './celulares.json';
 const branch = 'main';
 const convertirAitem = (celular) =>{
-    return ""
+    return `<div class="celular">
+    <span>Nombre: <input type="text" placeholder="Iphone 11" value="${celular.nombre}"></span>
+    <span>Capacidad: <input type="text" placeholder="64" value="${celular.capacidad}"> GB</span>
+    <span>Dolares: $<input type="number" placeholder="520" value="${celular.dolares}"></span>
+    <span>Imagen: <input type="text" placeholder="celular.png" value="${celular.imagen}"></span>
+    <span>Agotado: <input type="checkbox" ${celular.agotado?"checked":""}> (check = agotado)</span>
+</div>`
 }
+const productos = document.getElementById("productos")
 fetch("https://melnikandres.github.io/tecno-cel/celulares.json").then(res => res.json()).then(data => {
     productos.innerHTML = ""
-    for(tipo of data){
+    console.log(data)
+    for(tipo in data){
+        productos.innerHTML += `<h3>${tipo}</h3>`
         for(item of data[tipo]){
             productos.innerHTML += convertirAitem(item)
         }
