@@ -57,7 +57,35 @@ body{
     background-size: cover;
     height: 260px;
     position: relative;
+    overflow: hidden;
 }
+.header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height:0;
+    width: 0;
+    border: 65px solid transparent;
+    border-bottom: 65px solid rgb(244, 229, 244);
+    border-left: 65px solid rgb(244, 229, 244);
+    filter: drop-shadow(-5px 0 5px rgba(20,20,20,0.35));
+    -webkit-filter: drop-shadow(-5px 0 5px rgba(20,20,20,0.35));
+}
+.header::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height:0;
+    width: 0;
+    border: 65px solid transparent;
+    border-bottom: 65px solid rgb(244, 229, 244);
+    border-right: 65px solid rgb(244, 229, 244);
+    filter: drop-shadow(5px 0 5px rgba(20,20,20,0.35));
+    -webkit-filter: drop-shadow(5px 0 5px rgba(20,20,20,0.35));
+}
+
 
 .arrow{
     position: absolute;
