@@ -1,5 +1,6 @@
 *{
     --verde:#56b39f;
+    --verde-oscuro:rgb(83, 173, 154);
     --violeta:rgb(127,50,152);
     --blanco:rgb(245,230,245);
     --negro:rgb(65, 25, 85);
@@ -10,8 +11,33 @@ body{
     background-color: var(--blanco);
     margin: 0;
 }
+.header-fill{
+    position: relative;
+    background: linear-gradient(var(--verde) 3px, transparent 40px);
+    background-size: 20px 20px;
+    height: 400%;
+    width: 200%;
+    min-width: 1000px;
+    min-height: 1000px;
+    top: -100%;
+    left: -100%;
+    z-index: 1;
+    transform:skew(56deg,-56deg);
+}
+.fill-container{
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
 .header{
-    background-color: var(--verde);
+    position: relative;
+    background: var(--verde-oscuro);
+    background-size: 20px 20px;
     height: 360px;
 }
 .header::after{
@@ -25,7 +51,7 @@ body{
     border-top: 180px solid transparent;
     border-right: 120px solid var(--violeta);
     border-bottom: 180px solid var(--violeta);
-    z-index: 0;
+    z-index: 2;
     filter: drop-shadow(-5px 0 5px rgba(20,20,20,0.35));
     -webkit-filter: drop-shadow(-5px 0 5px rgba(20,20,20,0.35));
 }
@@ -41,7 +67,7 @@ body{
     border-right: 120px solid #44978d;
     border-bottom: 180px solid #44978d;
     transform: rotateX(180deg);
-    z-index: 0;
+    z-index: 2;
     filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
     -webkit-filter: drop-shadow(5px 5px 10px rgba(20,20,20,0.65));
 }
@@ -53,13 +79,14 @@ a{
     display: flex;
     align-items: center;
     padding: 0 5%;
-    gap:5%
+    gap:5%;
+    z-index: 2;
 }
 .navbar a{
     color: var(--blanco);
     text-align: right;
     font-size: 0.9rem;
-    z-index: 1;
+    z-index: 2;
 }
 .navbar a:hover{
     text-decoration: underline;
@@ -68,6 +95,8 @@ a{
     flex-grow: 1;
     user-select: none;
     height: 60px;
+    position: relative;
+    z-index: 2;
 }
 .logo-wrap{
     height: 60px;
@@ -91,11 +120,13 @@ a{
     transform: scale(1.08);
 }
 .header-content{
+    position: relative;
     padding: 0 8%;
     margin-top: 65px;
     width: 84%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    z-index: 10;
 }
 .header-text h2{
     color: var(--negro);
