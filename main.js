@@ -1,6 +1,7 @@
 
 const botonOtros = document.getElementById("boton-otros")
 const opcionesOtros = document.getElementById("opciones-otros")
+const imgSource = "https://melnikandres.github.io/tecno-cel/imagenes/"
 
 botonOtros.addEventListener("click", () =>{
     if(opcionesOtros.classList.contains("hidden")){
@@ -54,7 +55,7 @@ const convertirAitem = (celular,precioDolar,tipo) =>{
     const pesos = (celular.dolares*precioDolar).toLocaleString()
     return `<div class="producto ${celular.agotado?"agotado":""}">
     <div class="img-container">
-        <img src="${celular.imagen}" alt="">
+        <img src="${imgSource + celular.imagen}" alt="">
     </div>
     <p class="nombre">${celular.nombre}</p>
     <p>Capacidad: ${celular.capacidad}GB</p>
