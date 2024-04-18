@@ -45,9 +45,9 @@ async function getFileSha(fileName) {
     }
 }
 
-async function uploadFile() {
+async function uploadImagen() {
     const tokenInput = document.getElementById('tokenInput');
-    const fileInput = document.getElementById('fileInput');
+    const fileInput = document.getElementById('imgInput');
     const token = tokenInput.value;
     const file = fileInput.files[0];
     if (!file) {
@@ -69,7 +69,7 @@ async function uploadFile() {
                 console.log("El archivo no existe, se sube un archivo nuevo")
             }
 
-            const url = `https://api.github.com/repos/${owner}/${repo}/contents/${fileName}`;
+            const url = `https://api.github.com/repos/${owner}/${repo}/contents/imagenes/${fileName}`;
             const commitMessage = 'Upload file via JavaScript';
 
             const response = await fetch(url, {
