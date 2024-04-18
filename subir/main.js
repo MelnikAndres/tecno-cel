@@ -62,7 +62,12 @@ async function uploadFile() {
 
         try {
             const fileName = file.name;
-            const sha = await getFileSha(fileName);
+            let sha = null;
+            try{
+                sha = await getFileSha(fileName);
+            }catch(e){
+                console.log("El archivo no existe, se sube un archivo nuevo")
+            }
 
             const url = `https://api.github.com/repos/${owner}/${repo}/contents/${fileName}`;
             const commitMessage = 'Upload file via JavaScript';
@@ -71,7 +76,7 @@ async function uploadFile() {
                 method: 'PUT',
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'Content-Type': file.type === 'application/json' ? 'application/json' : file.type,
+                    'Content-Type': file.type,
                 },
                 body: JSON.stringify({
                     message: commitMessage,
