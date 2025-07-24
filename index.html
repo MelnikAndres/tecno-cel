@@ -58,16 +58,41 @@
         <main>
             <div class="main-content">
                 <div class="filtros">
-                    <p class="productos-text">PRODUCTOS</p>
-                    <button onclick="clickOpcion(OPCIONES[0])" id="Nuevos">Nuevos</button>
-                    <button onclick="clickOpcion(OPCIONES[1])" id="Semi-Nuevos">Semi-Nuevos</button>
-                    <div class="content-select">
+                    <div class="filter-header">
+                        <p class="productos-text">PRODUCTOS</p>
+                    </div>
+                    <div class="main-filters">
+                        <div class="category-filter-group">
+                            <label class="filter-group-label">Estado:</label>
+                            <div class="category-buttons">
+                                <button onclick="clickOpcion(OPCIONES[0])" id="Nuevos" class="category-btn">Nuevos</button>
+                                <button onclick="clickOpcion(OPCIONES[1])" id="Seminuevos" class="category-btn">Seminuevos</button>
+                                <button onclick="clickOpcion(OPCIONES[2])" id="Todos" class="category-btn">Todos</button>
+                            </div>
+                        </div>
+                        <div class="product-type-filter-group">
+                            <label class="filter-group-label">Categoria:</label>
+                            <div class="product-type-buttons">
+                                <button onclick="clickTipoProducto('celular')" id="celular" class="product-type-btn">Celulares</button>
+                                <button onclick="clickTipoProducto('accesorios')" id="accesorios" class="product-type-btn">Accesorios</button>
+                                <button onclick="clickTipoProducto('Todos')" id="TodosProductos" class="product-type-btn active">Todos</button>
+                            </div>
+                        </div>
+                        <div class="search-filter-group">
+                            <div class="search-container">
+                                <label for="search-input" class="filter-group-label">Buscar:</label>
+                                <input type="text" id="search-input" placeholder="Modelo, marca, color..." />
+                            </div>
+                            <div class="price-filter-container">
+                                <label for="max-price" class="filter-group-label">Precio máx. (USD):</label>
+                                <input type="number" id="max-price" placeholder="ej: 500" min="0" step="50" />
+                            </div>
+                            <button type="button" id="clear-filters" class="clear-filters-btn">Limpiar filtros</button>
+                        </div>
+                    </div>
+                    <div class="content-select" style="display: none;">
                         <button class="boton-otros" id="boton-otros">Otros<i></i></button>
                         <div class="opciones hidden" id="opciones-otros">
-                            <button onclick="clickOpcion(OPCIONES[2])" id="Reacondicionados">Reacondicionados</button>
-                            <button onclick="clickOpcion(OPCIONES[3])" id="Accesorios">Accesorios</button>
-                            <button onclick="clickOpcion(OPCIONES[4])" id="Usados">Usados</button>
-                            <button onclick="clickOpcion(OPCIONES[5])" id="Xiaomi">Xiaomi</button>
                         </div>
                         <p class="invisible-fill">Reacondicionados</p>
                     </div>
@@ -77,18 +102,39 @@
                         <div class="filler-img">
                             <div class="filler"></div>
                         </div>
-                        <div class="filler-nombre"><div class="filler"></div></div>
-                        <div class="filler-capacidad"><div class="filler"></div></div>
-                        <div class="filler-precio">
-                            <div class="filler"></div>
+                        
+                        <div class="producto-header">
+                            <div class="filler-nombre"><div class="filler"></div></div>
                         </div>
-                        <div class="filler-consultar">
-                            <div class="filler"></div>
+                        
+                        <div class="producto-specs">
+                            <div class="spec-row">
+                                <div class="filler-spec-label"><div class="filler"></div></div>
+                                <div class="filler-spec-value"><div class="filler"></div></div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="filler-spec-label"><div class="filler"></div></div>
+                                <div class="filler-spec-value"><div class="filler"></div></div>
+                            </div>
+                            <div class="spec-row">
+                                <div class="filler-spec-label"><div class="filler"></div></div>
+                                <div class="filler-spec-value"><div class="filler"></div></div>
+                            </div>
+                        </div>
+                        
+                        <div class="produto-bottom">
+                            <div class="filler-precio">
+                                <div class="filler"></div>
+                            </div>
+                            <div class="filler-consultar">
+                                <div class="filler"></div>
+                            </div>
                         </div>
                     </div>
                     
                 </div>
             </div>
+            
         </main>
         <script src="main.js"></script>
     </body>
