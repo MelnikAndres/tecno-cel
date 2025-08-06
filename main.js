@@ -1,23 +1,5 @@
 
-const botonOtros = document.getElementById("boton-otros")
-const opcionesOtros = document.getElementById("opciones-otros")
 const imgSource = "https://melnikandres.github.io/tecno-cel/imagenes/"
-
-botonOtros.addEventListener("click", () =>{
-    if(opcionesOtros.classList.contains("hidden")){
-        opcionesOtros.classList.remove("hidden")
-    }else{
-        opcionesOtros.classList.add("hidden")
-    }
-})
-document.addEventListener("click", (ev)=>{
-    if(ev.target === botonOtros){
-        return
-    }
-    if(!opcionesOtros.classList.contains("hidden")){
-        opcionesOtros.classList.add("hidden")
-    }
-})
 
 const OPCIONES = ["Nuevos","Seminuevos","Todos"]
 
@@ -59,10 +41,6 @@ var searchParams = new URLSearchParams(window.location.search);
 const setActivo = (opcion) =>{
     const activo = opcion?document.getElementById(opcion):document.getElementById("Todos")
     activo.classList.add("active")
-    if(OPCIONES.indexOf(opcion)>1){
-        const botonSelect = document.getElementById("boton-otros")
-        botonSelect.childNodes[0].data = opcion
-    }
 }
 
 const setActivoTipoProducto = (tipoProducto) => {

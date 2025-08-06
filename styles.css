@@ -248,14 +248,14 @@ a{
 
 .category-btn {
     background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
-    border: 2px solid #ddd;
+    border: none;
     color: var(--negro);
     padding: 12px 24px;
     border-radius: 25px;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -263,25 +263,10 @@ a{
     overflow: hidden;
 }
 
-.category-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.5s;
-}
-
-.category-btn:hover::before {
-    left: 100%;
-}
 
 .category-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(127, 50, 152, 0.2);
-    border-color: var(--violeta);
 }
 
 .category-btn.active {
@@ -305,47 +290,32 @@ a{
 }
 
 .product-type-btn {
-    background: linear-gradient(135deg, #f0f8f8 0%, #e0f0f0 100%);
-    border: 2px solid var(--verde);
+    background-color: #f0f8f8 !important;
+    border: none;
     color: var(--negro);
     padding: 12px 24px;
     border-radius: 25px;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    text-decoration: none !important;
 }
 
-.product-type-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: left 0.5s;
-}
-
-.product-type-btn:hover::before {
-    left: 100%;
-}
 
 .product-type-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(86, 179, 159, 0.2);
-    border-color: var(--verde-oscuro);
 }
 
 .product-type-btn.active {
     background: linear-gradient(135deg, var(--verde) 0%, var(--verde-oscuro) 100%) !important;
     color: white !important;
-    border-color: var(--verde-oscuro);
     box-shadow: 0 4px 15px rgba(86, 179, 159, 0.4);
     transform: translateY(-2px);
 }
@@ -426,9 +396,7 @@ a{
 }
 
 .filtros .category-btn{
-    /* Override the default button styles for category buttons */
-    background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%) !important;
-    border: 2px solid #ddd !important;
+    background-color: #f8f8f8 !important;
     color: var(--negro) !important;
     text-decoration: none !important;
 }
@@ -437,7 +405,6 @@ a{
     text-decoration: none !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(127, 50, 152, 0.2);
-    border-color: var(--violeta) !important;
 }
 
 .filtros .category-btn.active {
@@ -446,17 +413,6 @@ a{
     text-decoration: none !important;
 }
 
-.filtros button:not(.category-btn):not(.clear-filters-btn){
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    height: fit-content;
-    color: var(--negro);
-}
-.filtros button:not(.category-btn):not(.clear-filters-btn):hover{
-    text-decoration: underline;
-}
 .filtros p{
     flex-grow: 1;
     user-select: none;
@@ -989,7 +945,7 @@ a{
     
     .category-btn {
         padding: 12px 20px;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
         flex: 1;
         min-width: 80px;
         max-width: 120px;
@@ -1003,7 +959,7 @@ a{
     
     .product-type-btn {
         padding: 12px 20px;
-        font-size: 0.9rem;
+        font-size: 0.75rem !important;
         flex: 1;
         min-width: 80px;
         max-width: 120px;
